@@ -1,3 +1,7 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
 html, body, .grid-container {
   height: 100%;
   margin: 0;
@@ -14,28 +18,32 @@ html, body, .grid-container {
 }
 
 .grid-container * {
-  border: 1px solid #FFFAEA;
   position: relative;
 }
 
 .room-panel {
   background-color: #252538;
+  border: 1px solid #FFFAEA;
 }
 
 .chat-panel {
   background-color: #253042;
+  border: 1px solid #FFFAEA;
 }
 
 .room-form {
   background-color: #252538;
+  border: 1px solid #FFFAEA;
 }
 
 .chat-form {
   background-color: #253042;
+  border: 1px solid #FFFAEA;
 }
 
 .chat-wrapper {
   width: 100%;
+  padding: 6px 6px 6px 6px;
 }
 
 .message-text {
@@ -45,12 +53,13 @@ html, body, .grid-container {
   height: auto;
   min-height: 41px;
   max-height: 97px;
-  width: 387px;
-  border: 1px solid #e4e7ec;
+  width: 80%;
   border-radius: 20px;
-  background-color: #f9fafb;
+  background-color: #FFFAEA;
   outline: none;
   padding: 0 24px 0 24px;
-  overflow: hidden;
+  overflow: auto;
+  font-size: 1.25em;
+  font-family: "Lato", sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
