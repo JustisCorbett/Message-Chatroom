@@ -1,0 +1,56 @@
+html, body, .grid-container {
+  height: 100%;
+  margin: 0;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr 2fr;
+      grid-template-columns: 0.5fr 2fr;
+  -ms-grid-rows: 1.8fr 0.2fr;
+      grid-template-rows: 1.8fr 0.2fr;
+      grid-template-areas: ". ." ". .";
+}
+
+.grid-container * {
+  border: 1px solid #FFFAEA;
+  position: relative;
+}
+
+.room-panel {
+  background-color: #252538;
+}
+
+.chat-panel {
+  background-color: #253042;
+}
+
+.room-form {
+  background-color: #252538;
+}
+
+.chat-form {
+  background-color: #253042;
+}
+
+.chat-wrapper {
+  width: 100%;
+}
+
+.message-text {
+  resize: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
+  min-height: 41px;
+  max-height: 97px;
+  width: 387px;
+  border: 1px solid #e4e7ec;
+  border-radius: 20px;
+  background-color: #f9fafb;
+  outline: none;
+  padding: 0 24px 0 24px;
+  overflow: hidden;
+}
+/*# sourceMappingURL=style.css.map */
