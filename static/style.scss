@@ -49,6 +49,8 @@ html, body, .grid-container {
 .chat-wrapper {
     width: 100%;
     padding: 6px 6px 6px 6px;
+    display: flex;
+    flex: row;
 }
   
 .message-text {
@@ -65,4 +67,16 @@ html, body, .grid-container {
     overflow: auto;
     font-size: 1.25em;
     font-family: $text-font;
+}
+
+#submit-message{
+    height: auto;
+    min-height: 41px;
+    max-height: 97px;
+    width: 18%;
+    border-radius: 20px;
+    background-color: $light-blue;
+    font-family: $head-font;
+    font-size: 1.35em;
+    color: $white;
 }

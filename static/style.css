@@ -44,6 +44,12 @@ html, body, .grid-container {
 .chat-wrapper {
   width: 100%;
   padding: 6px 6px 6px 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
 }
 
 .message-text {
@@ -61,5 +67,17 @@ html, body, .grid-container {
   overflow: auto;
   font-size: 1.25em;
   font-family: "Lato", sans-serif;
+}
+
+#submit-message {
+  height: auto;
+  min-height: 41px;
+  max-height: 97px;
+  width: 18%;
+  border-radius: 20px;
+  background-color: #4F4F6B;
+  font-family: "Spartan", sans-serif;
+  font-size: 1.35em;
+  color: #FFFAEA;
 }
 /*# sourceMappingURL=style.css.map */
