@@ -10,8 +10,8 @@ html, body, .grid-container {
 .grid-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.5fr 2fr;
-      grid-template-columns: 0.5fr 2fr;
+  -ms-grid-columns: 2fr;
+      grid-template-columns: 2fr;
   -ms-grid-rows: 1.8fr 0.2fr;
       grid-template-rows: 1.8fr 0.2fr;
       grid-template-areas: ". ." ". .";
