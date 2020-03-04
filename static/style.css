@@ -1,44 +1,110 @@
 body {
   font-family: "Lato", sans-serif;
+  overflow: hidden;
 }
 
 html, body, .grid-container {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
+  padding: 0;
 }
 
 .grid-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr;
-      grid-template-columns: 2fr;
-  -ms-grid-rows: 1.8fr 0.2fr;
-      grid-template-rows: 1.8fr 0.2fr;
-      grid-template-areas: ". ." ". .";
+  -ms-grid-rows: 2fr 18fr 2fr;
+      grid-template-rows: 2fr 18fr 2fr;
+      grid-template-areas: "header" "panel-wrapper" "form-wrapper";
 }
 
-.grid-container * {
-  position: relative;
+@-webkit-keyframes panel-slide {
+  0% {
+    grid-template-columns: 1fr 24fr;
+  }
+  100% {
+    grid-template-columns: 24fr 1fr;
+  }
+}
+
+@keyframes panel-slide {
+  0% {
+    -ms-grid-columns: 1fr 24fr;
+        grid-template-columns: 1fr 24fr;
+  }
+  100% {
+    -ms-grid-columns: 24fr 1fr;
+        grid-template-columns: 24fr 1fr;
+  }
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  background-color: #4F4F6B;
+}
+
+.panel-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
+  height: 100%;
+  width: 100%;
+}
+
+.form-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
+  height: 100%;
+  width: 100%;
 }
 
 .room-panel {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: panel-wrapper;
   background-color: #252538;
-  border: 1px solid #FFFAEA;
+  border: 1px solid #262322;
+  height: 100%;
+  width: 50%;
 }
 
 .chat-panel {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: panel-wrapper;
   background-color: #253042;
-  border: 1px solid #FFFAEA;
+  border: 1px solid #262322;
+  height: 100%;
+  width: 50%;
 }
 
 .room-form {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: form-wrapper;
   background-color: #252538;
-  border: 1px solid #FFFAEA;
+  border: 1px solid #262322;
+  height: 100%;
+  width: 50%;
 }
 
 .chat-form {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: form-wrapper;
   background-color: #253042;
-  border: 1px solid #FFFAEA;
+  border: 1px solid #262322;
+  height: 100%;
+  width: 50%;
 }
 
 .chat-wrapper {
@@ -61,6 +127,7 @@ html, body, .grid-container {
   max-height: 97px;
   width: 80%;
   border-radius: 20px;
+  border-color: #262322;
   background-color: #FFFAEA;
   outline: none;
   padding: 0 24px 0 24px;
@@ -75,6 +142,7 @@ html, body, .grid-container {
   max-height: 97px;
   width: 18%;
   border-radius: 20px;
+  border-color: black;
   background-color: #4F4F6B;
   font-family: "Spartan", sans-serif;
   font-size: 1.35em;
