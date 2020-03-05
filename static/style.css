@@ -13,28 +13,32 @@ html, body, .grid-container {
 .grid-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 2fr 18fr 2fr;
-      grid-template-rows: 2fr 18fr 2fr;
+  -ms-grid-rows: 2fr 16fr 1fr;
+      grid-template-rows: 2fr 16fr 1fr;
       grid-template-areas: "header" "panel-wrapper" "form-wrapper";
 }
 
 @-webkit-keyframes panel-slide {
   0% {
-    grid-template-columns: 1fr 24fr;
+    -webkit-box-flex: 0.001;
+            flex-grow: 0.001;
   }
   100% {
-    grid-template-columns: 24fr 1fr;
+    -webkit-box-flex: 3;
+            flex-grow: 3;
   }
 }
 
 @keyframes panel-slide {
   0% {
-    -ms-grid-columns: 1fr 24fr;
-        grid-template-columns: 1fr 24fr;
+    -webkit-box-flex: 0.001;
+        -ms-flex-positive: 0.001;
+            flex-grow: 0.001;
   }
   100% {
-    -ms-grid-columns: 24fr 1fr;
-        grid-template-columns: 24fr 1fr;
+    -webkit-box-flex: 3;
+        -ms-flex-positive: 3;
+            flex-grow: 3;
   }
 }
 
@@ -52,6 +56,8 @@ html, body, .grid-container {
   -webkit-box-flex: row;
       -ms-flex: row;
           flex: row;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
   height: 100%;
   width: 100%;
 }
@@ -74,7 +80,21 @@ html, body, .grid-container {
   background-color: #252538;
   border: 1px solid #262322;
   height: 100%;
-  width: 50%;
+  -webkit-box-flex: 0.001;
+      -ms-flex-positive: 0.001;
+          flex-grow: 0.001;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  -webkit-animation: 1s infinite alternate panel-slide;
+          animation: 1s infinite alternate panel-slide;
+}
+
+.panel-button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  background-color: #939188;
+  height: 100%;
+  width: 4%;
 }
 
 .chat-panel {
@@ -84,31 +104,26 @@ html, body, .grid-container {
   background-color: #253042;
   border: 1px solid #262322;
   height: 100%;
-  width: 50%;
-}
-
-.room-form {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: form-wrapper;
-  background-color: #252538;
-  border: 1px solid #262322;
-  height: 100%;
-  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
 }
 
 .chat-form {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: form-wrapper;
-  background-color: #253042;
+  background-color: #252538;
   border: 1px solid #262322;
   height: 100%;
-  width: 50%;
+  width: 100%;
 }
 
 .chat-wrapper {
   width: 100%;
+  height: 100%;
   padding: 6px 6px 6px 6px;
   display: -webkit-box;
   display: -ms-flexbox;
