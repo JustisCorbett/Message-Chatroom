@@ -25,15 +25,6 @@ html, body, .grid-container {
     grid-template-areas: "header" "panel-wrapper" "form-wrapper"; 
 }
 
-@keyframes panel-slide {
-    0% {
-        flex-grow: 0.001;
-    }
-    100% {
-        flex-grow: 3;
-    }
-}
-
 .header {
     grid-area: header;
     background-color: $light-blue;
@@ -61,7 +52,7 @@ html, body, .grid-container {
     height: 100%;
     flex-grow: 0.001;
     flex-basis: auto;
-    animation: 1s infinite alternate panel-slide;
+    transition: all 1.25s;
 }
 
 .panel-button {
@@ -69,7 +60,10 @@ html, body, .grid-container {
     background-color: $grey;
     height: 100%;
     width: 4%;
-    
+}
+
+.panel-open {
+    flex-grow: 4;
 }
 
 .chat-panel {

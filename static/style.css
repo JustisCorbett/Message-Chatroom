@@ -18,30 +18,6 @@ html, body, .grid-container {
       grid-template-areas: "header" "panel-wrapper" "form-wrapper";
 }
 
-@-webkit-keyframes panel-slide {
-  0% {
-    -webkit-box-flex: 0.001;
-            flex-grow: 0.001;
-  }
-  100% {
-    -webkit-box-flex: 3;
-            flex-grow: 3;
-  }
-}
-
-@keyframes panel-slide {
-  0% {
-    -webkit-box-flex: 0.001;
-        -ms-flex-positive: 0.001;
-            flex-grow: 0.001;
-  }
-  100% {
-    -webkit-box-flex: 3;
-        -ms-flex-positive: 3;
-            flex-grow: 3;
-  }
-}
-
 .header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -85,8 +61,8 @@ html, body, .grid-container {
           flex-grow: 0.001;
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
-  -webkit-animation: 1s infinite alternate panel-slide;
-          animation: 1s infinite alternate panel-slide;
+  -webkit-transition: all 1.25s;
+  transition: all 1.25s;
 }
 
 .panel-button {
@@ -95,6 +71,12 @@ html, body, .grid-container {
   background-color: #939188;
   height: 100%;
   width: 4%;
+}
+
+.panel-open {
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
 }
 
 .chat-panel {
