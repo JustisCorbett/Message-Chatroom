@@ -21,8 +21,8 @@ html, body, .grid-container {
 
 .grid-container {
     display: grid;
-    grid-template-rows: 2fr 16fr 1fr;
-    grid-template-areas: "header" "panel-wrapper" "form-wrapper"; 
+    grid-template-rows: 2fr 18fr;
+    grid-template-areas: "header" "panel-wrapper"; 
 }
 
 .header {
@@ -41,7 +41,6 @@ html, body, .grid-container {
 .form-wrapper{
     display: flex;
     flex: row;
-    height: 100%;
     width: 100%;
 }
 
@@ -73,10 +72,18 @@ html, body, .grid-container {
     height: 100%;
     flex-grow: 1;
     flex-basis: auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 18fr 4fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: "chat" "form"; 
 }
 
+.chat{
+    grid-area: form;
+}
 .chat-form {
-    grid-area: form-wrapper;
+    grid-area: form;
     background-color: $purple;
     border: 1px solid $black;
     height: 100%;
