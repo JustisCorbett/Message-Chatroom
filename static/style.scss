@@ -3,9 +3,10 @@ $head-font: 'Spartan', sans-serif;
 $black: #262322;
 $purple: #252538;
 $blue: #253042;
-$light-blue: #4F4F6B;
-$white: #FFFAEA;
-$grey: #939188;
+$darkgrey: #2B2B3A;
+$white: #D8D8D8;
+$lightgrey: #939188;
+$grey: #3F3F3F;
 
 body {
     font-family: $text-font;
@@ -27,7 +28,7 @@ html, body, .grid-container {
 
 .header {
     grid-area: header;
-    background-color: $light-blue;
+    background-color: $darkgrey;
 }
 
 .panel-wrapper{
@@ -56,13 +57,13 @@ html, body, .grid-container {
 
 .panel-button {
     align-self: flex-end;
-    background-color: $grey;
+    background-color: $lightgrey;
     height: 100%;
     width: 4%;
 }
 
 .panel-open {
-    flex-grow: 4;
+    flex-grow: 6;
 }
 
 .chat-panel {
@@ -71,16 +72,17 @@ html, body, .grid-container {
     border: 1px solid $black;
     height: 100%;
     flex-grow: 1;
-    flex-basis: auto;
+    flex-shrink: 1;
+    flex-basis: 20px;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 18fr 4fr;
+    grid-template-rows: 18fr 3fr;
     grid-template-columns: 1fr;
     grid-template-areas: "chat" "form"; 
 }
 
-.chat{
-    grid-area: form;
+.chat-text-wrapper{
+    grid-area: chat;
 }
 .chat-form {
     grid-area: form;
@@ -92,7 +94,7 @@ html, body, .grid-container {
 
 .chat-wrapper {
     width: 100%;
-    height: 100%;
+    height: 80%;
     padding: 6px 6px 6px 6px;
     display: flex;
     flex: row;
@@ -100,31 +102,25 @@ html, body, .grid-container {
   
 .message-text {
     resize: none;
-    box-sizing: border-box;
     height: auto;
-    min-height: 41px;
-    max-height: 97px;
     width: 80%;
-    border-radius: 20px;
     border-color: $black;
-    background-color: $white;
+    background-color: $grey;
     outline: none;
     padding: 0 24px 0 24px;
     overflow: auto;
+    color: $white;
     font-size: 1.25em;
     font-family: $text-font;
 }
 
 #submit-message{
     height: auto;
-    min-height: 41px;
-    max-height: 97px;
     width: 18%;
-    border-radius: 20px;
-    border-color: black;
-    background-color: $light-blue;
+    border-color: $black;
+    background-color: $darkgrey;
     font-family: $head-font;
-    font-size: 1.35em;
+    font-size: 2em;
     color: $white;
 }
 
