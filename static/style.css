@@ -25,6 +25,13 @@ html, body, .grid-container {
   background-color: #2B2B3A;
 }
 
+.header-text {
+  font-family: "Spartan", sans-serif;
+  font-size: 3em;
+  color: #D8D8D8;
+  padding-left: 0.15em;
+}
+
 .panel-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,6 +77,18 @@ html, body, .grid-container {
   background-color: #939188;
   height: 100%;
   width: 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Spartan", sans-serif;
+  color: #3F3F3F;
+  font-size: 3em;
 }
 
 .panel-open {

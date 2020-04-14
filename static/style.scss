@@ -31,6 +31,13 @@ html, body, .grid-container {
     background-color: $darkgrey;
 }
 
+.header-text {
+    font-family: $head-font;
+    font-size: 3em;
+    color: $white;
+    padding-left: 0.15em;
+}
+
 .panel-wrapper{
     display: flex;
     flex: row;
@@ -60,6 +67,12 @@ html, body, .grid-container {
     background-color: $lightgrey;
     height: 100%;
     width: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $head-font;
+    color: $grey;
+    font-size: 3em;
 }
 
 .panel-open {
