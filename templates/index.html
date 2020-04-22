@@ -22,11 +22,24 @@
                 <div class="header-text">
                     <span>Message!</span>
                 </div>
-                
+                <div class="name-wrapper">
+                    <span>Current Name: </span>
+                    <span id="current-name">anonymous</span>
+                </div>
+                <div class="create-name-wrapper">
+                    <textarea class="create-room" id ="create-name" placeholder="Create new name." cols="25" rows="1" maxlength="25"></textarea>
+                    <button id="submit-name">⮠</button>
+                </div>
             </div>
             <div class="panel-wrapper">
                 <div class="room-panel">
-                
+                    <div class="create-room-wrapper">
+                        <textarea class="create-room" id="create-room" placeholder="Create new room name." cols="25" rows="1" maxlength="25"></textarea>
+                        <button id="submit-room">⮠</button>
+                    </div>
+                    <div class="rooms-wrapper">
+
+                    </div>
                 </div>
                 <div class="panel-button">
                     <span id="panel-arrow">></span>
@@ -37,7 +50,7 @@
                     </div>
                     <div class="chat-form">
                         <div class="chat-wrapper">
-                            <textarea class="message-text" placeholder="Please choose a username." cols="30" rows="2"></textarea>
+                            <textarea class="message-text" id="message-text" placeholder="Please choose a username." cols="30" rows="2"></textarea>
                             <button id="submit-message">⮠</button>
                         </div>
                     </div>

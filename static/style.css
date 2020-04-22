@@ -23,6 +23,20 @@ html, body, .grid-container {
   -ms-grid-column: 1;
   grid-area: header;
   background-color: #2B2B3A;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header-text {
@@ -30,6 +44,27 @@ html, body, .grid-container {
   font-size: 3em;
   color: #D8D8D8;
   padding-left: 0.15em;
+}
+
+.name-wrapper {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  color: #939188;
+}
+
+.create-name-wrapper {
+  padding: 6px 0px 6px 0px;
+}
+
+#submit-name {
+  height: auto;
+  width: 3em;
+  padding-right: 2%;
+  border-color: #262322;
+  background-color: #2B2B3A;
+  font-family: "Spartan", sans-serif;
+  font-size: 2em;
+  color: #D8D8D8;
 }
 
 .panel-wrapper {
@@ -62,13 +97,51 @@ html, body, .grid-container {
   background-color: #252538;
   border: 1px solid #262322;
   height: 100%;
+  width: 0px;
   -webkit-box-flex: 0.001;
       -ms-flex-positive: 0.001;
           flex-grow: 0.001;
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
+  -ms-flex-preferred-size: 0px;
+      flex-basis: 0px;
   -webkit-transition: all 1.25s;
   transition: all 1.25s;
+}
+
+.create-room-wrapper {
+  background-color: #253042;
+  width: 100%;
+  height: 7%;
+  padding: 6px 6px 6px 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
+}
+
+.create-room {
+  resize: none;
+  height: auto;
+  /*width: 80%;*/
+  border-color: #262322;
+  background-color: #939188;
+  outline: none;
+  overflow: hidden;
+  color: #262322;
+  font-size: 1.25em;
+  font-family: "Lato", sans-serif;
+}
+
+#submit-room {
+  height: auto;
+  width: 10%;
+  padding-right: 2%;
+  border-color: #262322;
+  background-color: #2B2B3A;
+  font-family: "Spartan", sans-serif;
+  font-size: 2em;
+  color: #D8D8D8;
 }
 
 .panel-button {
@@ -95,6 +168,11 @@ html, body, .grid-container {
   -webkit-box-flex: 6;
       -ms-flex-positive: 6;
           flex-grow: 6;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
 }
 
 .chat-panel {
@@ -156,7 +234,7 @@ html, body, .grid-container {
   border-color: #262322;
   background-color: #3F3F3F;
   outline: none;
-  padding: 0 24px 0 24px;
+  padding: 0 12px 0 12px;
   overflow: auto;
   color: #D8D8D8;
   font-size: 1.25em;
