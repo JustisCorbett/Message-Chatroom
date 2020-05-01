@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato|Spartan:400i&display=swap" rel="stylesheet">
 
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-        <script src="/static/index.js"></script>
+        <script src="/static/index.js" defer></script>
 
         <title>Message!</title>
 
@@ -22,14 +22,20 @@
                 <div class="header-text">
                     <span>Message!</span>
                 </div>
+                {% if username %}
                 <div class="name-wrapper">
                     <span>Current Name: </span>
-                    <span id="current-name">anonymous</span>
+                    <span id="current-name">{{ username }}</span>
                 </div>
+                {% else %}
                 <div class="create-name-wrapper">
-                    <textarea class="create-room" id ="create-name" placeholder="Create new name." cols="25" rows="1" maxlength="25"></textarea>
-                    <button id="submit-name">⮠</button>
+                    <form id="name-form" action="/register" method="post">
+                        <label for="create-name">Create Name:</label>
+                        <input type="text" class="create-room" id ="create-name" cols="25" rows="1" maxlength="25"></input>
+                        <button id="submit-name">⮠</button>
+                    </form>
                 </div>
+                {% endif %}
             </div>
             <div class="panel-wrapper">
                 <div class="room-panel">

@@ -50,7 +50,12 @@ html, body, .grid-container {
 }
 
 .create-name-wrapper {
-    padding: 6px 0px 6px 0px
+    font-family: $text-font;
+    font-size: 1.5em;
+    color: $lightgrey;
+    padding: 6px 0px 6px 0px;
+    display: flex;
+    height: 80%;
 }
 
 #submit-name {
