@@ -27,8 +27,15 @@ def index():
 
 
 @app.route("/create-name", methods=["POST"])
-def createName():
-    return "thanks"
+def create_name():
+
+    req = request.get_json()
+
+    print(req)
+    session["username"] = req["username"]
+
+    res = make_response(jsonify({"message": "ok"}), 200)
+    return res
 
 
 @socketio.on("join")
@@ -48,7 +55,7 @@ def on_leave(data):
 
 
 @socketio.on("changeRoom")
-def changeRoom(arg1):
+def change_room(arg1):
     return ("change")
 
 if __name__ == "__main__":
