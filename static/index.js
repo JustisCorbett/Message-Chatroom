@@ -1,13 +1,16 @@
 
 const roomPanel = document.querySelector(".room-panel");
+const chatPanel = document.querySelector(".chat-panel");
 
 document.querySelector('.panel-button').onclick = () => {
     if (roomPanel.classList.contains("panel-open")){
+        chatPanel.classList.add("panel-open");
         roomPanel.classList.remove("panel-open");
         document.getElementById("panel-arrow").innerHTML = ">";    
     }
     else {
         roomPanel.classList.add("panel-open");
+        chatPanel.classList.remove("panel-open");
         document.getElementById("panel-arrow").innerHTML = "<";
     }
 };

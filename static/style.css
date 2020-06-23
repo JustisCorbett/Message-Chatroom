@@ -104,7 +104,6 @@ html, body, .grid-container {
   background-color: #252538;
   border: 1px solid #262322;
   height: 100%;
-  width: 0px;
   -webkit-box-flex: 0.001;
       -ms-flex-positive: 0.001;
           flex-grow: 0.001;
@@ -112,6 +111,7 @@ html, body, .grid-container {
       flex-basis: 0px;
   -webkit-transition: all 1.25s;
   transition: all 1.25s;
+  min-width: 0;
 }
 
 .create-room-wrapper {
@@ -130,7 +130,6 @@ html, body, .grid-container {
 .create-room {
   resize: none;
   height: auto;
-  /*width: 80%;*/
   border-color: #262322;
   background-color: #939188;
   outline: none;
@@ -172,9 +171,9 @@ html, body, .grid-container {
 }
 
 .panel-open {
-  -webkit-box-flex: 6;
-      -ms-flex-positive: 6;
-          flex-grow: 6;
+  -webkit-box-flex: 100 !important;
+      -ms-flex-positive: 100 !important;
+          flex-grow: 100 !important;
   width: 100%;
 }
 
@@ -189,13 +188,11 @@ html, body, .grid-container {
   background-color: #253042;
   border: 1px solid #262322;
   height: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
-  -ms-flex-preferred-size: 20px;
-      flex-basis: 20px;
+  -webkit-box-flex: 0.001;
+      -ms-flex-positive: 0.001;
+          flex-grow: 0.001;
+  -ms-flex-preferred-size: 0px;
+      flex-basis: 0px;
   overflow: hidden;
   display: -ms-grid;
   display: grid;
@@ -204,6 +201,9 @@ html, body, .grid-container {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "chat" "form";
+  -webkit-transition: all 1.25s;
+  transition: all 1.25s;
+  min-width: 0;
 }
 
 .chat-text-wrapper {

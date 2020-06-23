@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, session, request, jsonify, make_response
+from flask import Flask, render_template, session, request
 from flask_socketio import SocketIO, emit, join_room, leave_room, send
 
 app = Flask(__name__)
@@ -31,11 +31,9 @@ def create_name():
 
     req = request.get_json()
 
-    print(req)
     session["username"] = req["username"]
-
-    res = make_response(jsonify({"message": "ok"}), 200)
-    return res
+    
+    return redirect("/")
 
 
 @socketio.on("join")
