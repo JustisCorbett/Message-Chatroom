@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, session, request, make_response, jsonify
 from flask_socketio import SocketIO, emit, join_room, leave_room, send
 
 app = Flask(__name__)
@@ -8,6 +8,7 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 socketio = SocketIO(app)
 rooms = []
+users = []
 
 
 @app.route("/")
@@ -29,11 +30,17 @@ def index():
 @app.route("/create-name", methods=["POST"])
 def create_name():
 
-    req = request.get_json()
+    req = request.form.to_dict()
+    username = req["username"]
 
-    session["username"] = req["username"]
+    if not username:
+        return make_response(jsonify({"message": "Error: Please Enter A Valid Username"}), 400)
+    elif username is in users:
+        return make_respinse(jsonify({"message": "Error: Username Is Already Taken"}), 400)
+    else:
+        
     
-    return redirect("/")
+    return make_response(jsonify({"message": "OK"}), 200)
 
 
 @socketio.on("join")

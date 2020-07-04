@@ -20,7 +20,12 @@ const nameForm = document.getElementById("name-form");
 nameForm.addEventListener("submit", function (e){
     e.preventDefault;
 
-    const formData = new FormData(this);
+    let name = document.getElementById("create-name").value;
+    if (name == false) {
+        alert("You must enter a valid username!");
+        return false;
+    }
+    let formData = new FormData(nameForm);
 
     fetch("/create-name", {
         method: "post",
@@ -31,6 +36,12 @@ nameForm.addEventListener("submit", function (e){
         console.log(text);
     }).catch(function (error) {
         console.error(error);
+        alert(error);
     })
 });
 
+document.onload = loadRooms();
+
+function loadRooms() {
+
+};

@@ -56,21 +56,31 @@ html, body, .grid-container {
   font-family: "Lato", sans-serif;
   font-size: 1.5em;
   color: #939188;
-  padding: 6px 0px 6px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: row;
+      -ms-flex: row;
+          flex: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 80%;
 }
 
+#name-form {
+  margin: 0;
+}
+
 #submit-name {
-  height: auto;
-  width: 3em;
-  padding-right: 2%;
+  height: 75% !important;
+  width: auto;
   border-color: #262322;
   background-color: #2B2B3A;
   font-family: "Spartan", sans-serif;
-  font-size: 2em;
+  font-size: 1em;
   color: #D8D8D8;
 }
 
@@ -137,6 +147,16 @@ html, body, .grid-container {
   color: #262322;
   font-size: 1.25em;
   font-family: "Lato", sans-serif;
+}
+
+.rooms-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #submit-room {

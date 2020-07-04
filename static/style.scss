@@ -53,19 +53,24 @@ html, body, .grid-container {
     font-family: $text-font;
     font-size: 1.5em;
     color: $lightgrey;
-    padding: 6px 0px 6px 0px;
     display: flex;
+    flex: row;
+    flex-wrap: nowrap;
+    align-items: center;
     height: 80%;
 }
 
+#name-form {
+    margin: 0;
+}
+
 #submit-name {
-    height: auto;
-    width: 3em;
-    padding-right: 2%;
+    height: 75% !important;
+    width: auto;
     border-color: $black;
     background-color: $darkgrey;
     font-family: $head-font;
-    font-size: 2em;
+    font-size: 1em;
     color: $white;
 }
 
@@ -113,6 +118,11 @@ html, body, .grid-container {
     color: $black;
     font-size: 1.25em;
     font-family: $text-font;
+}
+
+.rooms-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 #submit-room {
