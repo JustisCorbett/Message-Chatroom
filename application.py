@@ -8,7 +8,7 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
 socketio = SocketIO(app)
 rooms = []
-users = []
+users = set()
 
 
 @app.route("/")
@@ -30,17 +30,19 @@ def index():
 @app.route("/create-name", methods=["POST"])
 def create_name():
 
-    req = request.form.to_dict()
-    username = req["username"]
+    req = request.get_json()
+    name = req["name"]
 
-    if not username:
-        return make_response(jsonify({"message": "Error: Please Enter A Valid Username"}), 400)
-    elif username is in users:
-        return make_respinse(jsonify({"message": "Error: Username Is Already Taken"}), 400)
+    if not name:
+        res = make_response(jsonify({"message": "Error: Please Enter A Valid Username"}), 400)
+    elif name in users:
+        res = make_response(jsonify({"message": "Error: Username Is Already Taken"}), 400)
     else:
-        
-    
-    return make_response(jsonify({"message": "OK"}), 200)
+        res = make_response(jsonify({"message": "OK"}), 200)
+        users.append(name)
+        session["username"] = name
+
+    return res
 
 
 @socketio.on("join")

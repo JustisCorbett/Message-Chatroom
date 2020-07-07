@@ -29,11 +29,11 @@
                 </div>
                 {% else %}
                 <div class="create-name-wrapper">
-                    <form id="name-form" action="/create-name" method="post">
+                    <div id="name-form">
                         <label for="create-name">Create Name:</label>
                         <input type="text" class="create-room" id ="create-name" name="username" cols="25" rows="1" maxlength="25"></input>
-                        <button id="submit-name">Submit</button>
-                    </form>
+                        <button id="submit-name" onclick="submitUsername();">Submit</button>
+                    </div>
                 </div>
                 {% endif %}
             </div>
