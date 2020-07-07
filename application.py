@@ -36,10 +36,10 @@ def create_name():
     if not name:
         res = make_response(jsonify({"message": "Error: Please Enter A Valid Username"}), 400)
     elif name in users:
-        res = make_response(jsonify({"message": "Error: Username Is Already Taken"}), 400)
+        res = make_response(jsonify({"message": "Error: Username Is Already Taken"}), 409)
     else:
         res = make_response(jsonify({"message": "OK"}), 200)
-        users.append(name)
+        users.add(name)
         session["username"] = name
 
     return res

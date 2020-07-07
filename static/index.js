@@ -33,10 +33,16 @@ function submitUsername() {
         }),
         body: JSON.stringify(entry)
     }).then(function (response) {
-        return response.text();
+        if (response.status !== 200) {
+            console.log(response.text);
+            alert(response.text);
+            return false;
+        } else {
+            window.location.reload();
+            return false;
+        }
     }).catch(function (error) {
         console.error(error);
-        alert(error);
     })
 };
 
